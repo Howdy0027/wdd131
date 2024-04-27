@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Bruno+Ace+SC&display=swap');
+
+/* Website Font and Color Scheme */
+:root {
+    /* Font */
+    --heading-font: "Bruno Ace SC";
+    --paragraph-font: "Bruno Ace";
+    /* Background Color Scheme*/
+    --background-color: #FFFDD0;
+    /* Header Color Scheme*/
+    --head-background-color: #00205B;
+    --head-text-color: #FFFFFF;
+    /* Navigation Color Scheme */
+    --nav-background-color: #BF0D3E;
+    --nav-link-color: #FFFFFF;
+    --nav-hover-background-color: #FFFFFF;
+    --nav-hover-link-color: #BF0D3E;
+    /* Card Color Scheme */
+    --card-background-color: #FFFFFF;
+    --card-header-color: #00205B;
+    --card-text-color: #FFFFFF;
+    --card-border-color: black;
+    --card-hover-background-color: #BF0D3E;
+    --card-hover-link-color: #FFFFFF;
+    /* Footer Color Scheme */
+    --footer-background-color: #BF0D3E;
+    --footer-text-color: #FFFFFF;
+    --footer-last-modified-color: #00205B;
+}
+
+/* Overall Body CSS Coding */
+body {
+    background-color: var(--background-color);
+    font-family: var(--heading-font), var(--paragraph-font);
+    margin: 0;
+}
+
+/* Header CSS Coding */
+header {
+    text-align: center;
+}
+
+header h1 {
+    background-color: var(--head-background-color);
+    color: var(--head-text-color);
+    margin: 0;
+    padding: 2rem;
+}
+
+header nav {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--nav-background-color);
+}
+
+header nav a {
+    flex: 1;
+    text-decoration: none;
+    color: var(--nav-link-color);
+    padding: 1.25rem;
+}
+
+header nav a:hover {
+    background-color: var(--nav-hover-background-color);
+    color: var(--nav-hover-link-color);
+}
+
+/* Main Body CSS Coding */
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+}
+
+.first-card {
+    text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 7fr 3fr;
+    }
+
+    .first-card {
+        display: grid;
+        align-items: center;
+        text-align: left;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    header nav {
+        flex-direction: row;
+    }
+}
+
+.card .second-h2 {
+    border-bottom: 1px solid var(--card-border-color);
+    margin: 0 5rem;
+}
+
+.card {
+    background-color: var(--card-background-color);
+    margin: 1rem;
+    border: 1px solid var(--card-border-color);
+    border-radius: 10px;
+}
+
+.card h2 {
+    grid-column: 1 / 4;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+}
+
+.card p {
+    grid-column: span 2;
+    margin: 1rem;
+    font-size: .75rem;
+}
+
+.card img {
+    max-width: 250px;
+    margin: 1rem;
+}
+
+.card li {
+    list-style-type: none;
+    margin: 50px 0px;
+    text-align: left;
+}
+
+.card a {
+    padding: 1.5rem;
+    color: var(--footer-link-color);
+    text-decoration: none;
+}
+
+.card a:hover {
+    background-color: var(--card-hover-background-color);
+    color: var(--card-hover-link-color);
+}
+
+.card-head {
+    background-color: var(--card-header-color);
+    color: var(--card-text-color);
+    border-radius: 10px 10px 0 0;
+}
+
+/* Footer CSS Coding */
+footer {
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 2rem;
+}
+
+footer p {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+#lastModified {
+    color: var(--footer-last-modified-color);
+    font-size: 1rem;
+}
