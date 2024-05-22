@@ -1,0 +1,41 @@
+/* Larger view CSS */
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 16px;
+    }
+
+    #nav-menu {
+        display: flex;
+        gap: 16px;
+    }
+
+    #nav-menu li {
+        margin: 0;
+    }
+
+    #hamburger-menu {
+        display: none;
+    }
+
+    main {
+        max-width: 80%;
+    }
+
+    .temple-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    figure {
+        margin: 24px 0;
+    }
+
+    figure img {
+        height: 300px;
+    }
+}

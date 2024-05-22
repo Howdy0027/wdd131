@@ -159,6 +159,11 @@ footer p {
     margin: 0;
 }
 
+footer p .copyright {
+    font-size: 1.5em;
+    /* Adjust this value to make the symbol bigger */
+}
+
 #lastModified {
     color: var(--footer-last-modified-color);
     font-size: 1rem;
