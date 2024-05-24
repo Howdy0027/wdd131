@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Bruno+Ace+SC&display=swap');
+
+/* BASE */
+/* Define CSS variables for fonts and colors */
+:root {
+    /* Fonts */
+    --heading-font: "Bruno Ace SC", sans-serif;
+    --paragraph-font: "Bruno Ace", sans-serif;
+
+    /* Colors */
+    --primary-color: #005aa7;
+    --secondary-color: #fff;
+    --tertiary-color: #ff0000;
+    --primary-text-color: #fff;
+}
+
+/* Apply box-sizing and default font family */
+* {
+    box-sizing: border-box;
+    font-family: var(--paragraph-font);
+}
+
+/* Apply heading font family to all heading elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+}
+
+/* HEADER */
+/* Style the header with background color and text color */
+header {
+    background-color: var(--primary-color);
+    color: var(--primary-text-color);
+}
+
+/* Style the title heading within the header */
+.title-heading {
+    margin: 0;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+/* MAIN */
+/* Set maximum width for main content and center it */
+main {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+/* Style the hero image */
+.hero-image {
+    width: 100%;
+    height: auto;
+    border-top: 20px solid var(--tertiary-color);
+    border-bottom: 10px solid var(--tertiary-color);
+}
+
+/* Style the data section */
+.data {
+    border-bottom: 1px solid #888;
+}
+
+/* Center align the headings in data and weather sections */
+.data h2,
+.weather h2 {
+    text-align: center;
+}
+
+/* Center align the data table */
+.data table {
+    margin: 1.5rem auto;
+}
+
+/* Left align the weather section text */
+.weather {
+    text-align: center;
+}
+
+/* Center align the weather table */
+.weather table {
+    text-align: left;
+    margin: 1.5rem auto;
+}
+
+/* Right align text for table cells with class 'right' */
+.right {
+    text-align: right;
+}
+
+/* Hide weather icon for mobile view by default */
+.weather-icon-mobile {
+    display: none;
+}
+
+/* FOOTER */
+/* Style the footer with background color, text color, and padding */
+footer {
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+/* Increase font size for copyright symbol */
+footer p .copyright {
+    font-size: 1.5em;
+}
+
+/* Style footer text */
+footer p {
+    color: var(--primary-text-color);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Add prefix 'Modification: ' before the last modified date */
+.last-modified::before {
+    content: "Modification: ";
+}
+
+/* Media Queries */
+/* Styles for screens wider than 1000px */
+@media screen and (min-width: 1000px) {
+    main {
+        position: relative;
+    }
+
+    /* Style the data section for larger screens */
+    .data {
+        background-color: var(--secondary-color);
+        opacity: 0.85;
+        position: absolute;
+        border-bottom: none;
+        top: 3.5rem;
+        left: 3.5rem;
+    }
+
+    /* Style the headings in data and weather sections for larger screens */
+    .data h2,
+    .weather h2 {
+        background-color: var(--tertiary-color);
+        color: var(--primary-text-color);
+        margin-top: 1rem;
+        margin-left: -1rem;
+        width: 90%;
+        padding: 0.8rem 1rem;
+        text-align: left;
+    }
+
+    /* Margin adjustments for data and weather tables on larger screens */
+    .data table,
+    .weather table {
+        margin: 1.5rem;
+    }
+
+    /* Style the weather section for larger screens */
+    .weather {
+        position: absolute;
+        opacity: 0.85;
+        bottom: 3.5rem;
+        right: 3.5rem;
+        background-color: var(--secondary-color);
+    }
+
+    /* Add weather icon after the weather section heading on larger screens */
+    .weather h2::after {
+        content: " ⛅";
+    }
+
+    /* Hide weather icon in larger screens */
+    .weather-icon {
+        display: none;
+    }
+
+    /* Ensure weather icon for mobile is hidden in larger screens */
+    .weather-icon-mobile {
+        display: none;
+    }
+}
+
+/* Styles for screens narrower than 1000px */
+@media screen and (max-width: 999px) {
+
+    /* Show weather icon in mobile view */
+    .weather-icon-mobile {
+        display: block;
+    }
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <!-- Meta Tags for Charset, Viewport, Author, and Description -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Austin Taylor">
+    <meta name="description" content="WDD 131: Dynamic Web Fundamentals | Country Page Assignment | Austin Taylor">
+
+    <!-- Title of the Page -->
+    <title>Panamá | Country Page</title>
+
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="styles/place.css">
+
+    <!-- Link to External JavaScript -->
+    <script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <!-- Main Heading -->
+        <h1 class="title-heading">Panamá</h1>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Hero Image Container -->
+        <div class="hero-container">
+            <!-- Picture Element for Responsive Images -->
+            <picture>
+                <!-- Image for Desktop View -->
+                <source srcset="images/panama_desktop.webp" media="(min-width: 1000px)">
+                <!-- Image for Mobile View -->
+                <source srcset="images/panama_mobile.webp" media="(min-width: 500px)">
+                <!-- Default Image for Mobile View -->
+                <img src="images/panama_mobile.webp" alt="Panamá image" class="hero-image" width="320" height="426">
+            </picture>
+        </div>
+
+        <!-- Data Section -->
+        <section class="data">
+            <!-- Section Heading -->
+            <h2>Data</h2>
+            <!-- Table with Country Data -->
+            <table>
+                <tr>
+                    <td class="right"><b>Area:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;75,420 km<sup>2</sup></td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Population:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;4,470,241</td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Capital:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;Panamá City</td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Languages:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;Spanish</td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Religions:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;Evangelical & Roman Catholic</td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Independence:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;November 3<sup>rd</sup>, 1903</td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Currency:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;Balboa (PAB), United States Dollar (USD)</td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Timezone:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;UTC-5</td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Calling code:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;+507</td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Internet TLD:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;.pa</td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Source:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;<a href="https://www.cia.gov/the-world-factbook/countries/panama/"
+                            target="_blank">CIAWorldFactbook.gov</a></td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Weather Section -->
+        <section class="weather">
+            <!-- Section Heading -->
+            <h2>Average Annual Weather</h2>
+            <!-- Figure with Weather Icon for Mobile View -->
+            <figure class="weather-icon-mobile">
+                <img src="images/weather_icon.svg" alt="weather icon" class="weather_icon" width="100" height="100">
+            </figure>
+            <!-- Table with Weather Data -->
+            <table>
+                <tr>
+                    <td class="right"><b>Conditions:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;Warm and Humid, with Wet and Dry Seasons</td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Temperature:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;<span id="celsius">27</span>&deg;C | <span id="fahrenheit">81</span>&deg;F
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Cloud Cover:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;50%</td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Precipitation:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;8.4 days/mo</td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Rainfall:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;4.5 in/mo</td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Daylight:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;12.1 h/day</td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Humidity:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;30.4 days/mo | 68%</td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Wind Speed:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;<span id="km_h">15.3</span> km/h | <span id="mph">9</span> mph</td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Wind Chill:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;<span id="windchill"></span></td>
+                </tr>
+                <tr>
+                    <td class="right"><b>Source:</b></td>
+                    <td>&nbsp;&nbsp;&nbsp;<a
+                            href="https://weatherspark.com/y/19385/Average-Weather-in-Panam%C3%A1-Panama-Year-Round"
+                            target="_blank">WeatherSpark.com</a></td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <!-- Footer Content -->
+        <p><span class="copyright">&copy;</span> <span id="currentYear"></span> | Austin Taylor | Texas</p>
+        <p class="last-modified" id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
