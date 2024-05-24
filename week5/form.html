@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review</title>
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js"></script>
+
+</head>
+
+<body>
+    <div class="form-container">
+        <form id="product-review-form" method="get" action="review.html">
+            <h1>Product Review</h1>
+
+            <label for="product-name">Product Name</label>
+            <select id="product-name" name="product-name" required>
+                <option value="" disabled selected>Select a Product...</option>
+            </select>
+
+            <label>Overall Rating</label>
+            <div id="rating">
+                <input type="radio" id="star5" name="rating" value="5" required><label for="star5">☆</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4">☆</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3">☆</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2">☆</label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1">☆</label>
+            </div>
+
+            <label for="installation-date">Date of Installation</label>
+            <input type="date" id="installation-date" name="installation-date" required>
+
+            <fieldset>
+                <legend>Which features did you find useful in the product? (Check all that apply)</legend>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="durability" name="features" value="Durability">
+                    <label for="durability">Durability</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="ease-of-use" name="features" value="Ease of Use">
+                    <label for="ease-of-use">Ease of Use</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="performance" name="features" value="Performance">
+                    <label for="performance">Performance</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="design" name="features" value="Design">
+                    <label for="design">Design</label>
+                </div>
+            </fieldset>
+
+            <label for="review">Written Review (Optional)</label>
+            <textarea id="review" name="review"></textarea>
+
+            <label for="username">Your Name (Optional)</label>
+            <input type="text" id="username" name="username">
+
+            <input type="submit" value="Post Review">
+        </form>
+    </div>
+
+    <footer>
+        <p><span class="copyright">&copy;</span> <span id="currentYear"></span> | Austin Taylor | Texas</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
