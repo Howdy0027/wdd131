@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Soren FleetForce</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/final/images/soren_r.png" alt="Soren R Icon">
+    <!-- Meta tag for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="/final/styles/login.css">
+    <!-- Link to external JavaScript files -->
+    <script src="/final/scripts/login.js" defer></script>
+    <!-- <script src="/scripts/reset_password.js" defer></script> -->
+</head>
+
+<body>
+    <div class="container">
+        <!-- Login container -->
+        <div class="login-container">
+            <h1>
+                <img src="/final/images/soren_logo.png" alt="Company Logo" class="title-logo">
+                <span>FleetForce</span>
+            </h1>
+            <p>Hi, Welcome! Please enter your provided user email and password below to log in to your SOREN account.
+            </p>
+            <!-- Login form -->
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">User Email <span class="required">*</span></label>
+                    <div class="input-container">
+                        <img src="/final/images/user_icon.svg" class="icon" alt="User Icon">
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password <span class="required">*</span></label>
+                    <div class="input-container">
+                        <img src="/final/images/lock_icon.svg" class="icon" alt="Lock Icon">
+                        <input type="password" id="password" name="password" required>
+                        <i class="icon toggle-password" id="togglePassword">
+                            <img src="/final/images/eye_slash_icon.svg" alt="Toggle Password Visibility">
+                        </i>
+                    </div>
+                </div>
+                <div class="form-group remember-me-container">
+                    <div class="remember-me">
+                        <input type="checkbox" id="rememberMe" name="rememberMe">
+                        <label for="rememberMe">Remember Me</label>
+                    </div>
+                    <!-- <a href="#" id="forgotPasswordLink" class="forgot-password">Forgot Password?</a> -->
+                </div>
+                <button type="submit">LOGIN</button>
+            </form>
+
+            <!-- Token Verification Form (Commented Out) -->
+            <!--
+            <form id="tokenForm" style="display:none;">
+                <div class="form-group">
+                    <label for="token">Enter the token sent to your phone</label>
+                    <input type="text" id="token" name="token" required>
+                </div>
+                <button type="submit">Verify Token</button>
+            </form>
+            -->
+        </div>
+        <!-- Background image -->
+        <div class="background-image"></div>
+    </div>
+
+    <!-- Password Reset Popup Modal (Commented Out) -->
+    <!--
+    <div id="passwordResetPopup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePasswordResetPopup()">&times;</span>
+            <h2>Reset Password</h2>
+            <!-- Password reset form -->
+    <!--
+            <form id="passwordResetForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <button type="submit">Send Password Reset Email</button>
+            </form>
+        </div>
+    </div>
+    -->
+</body>
+
+</html>

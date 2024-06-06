@@ -1,0 +1,74 @@
+equip_type_id,equip_type_name
+AC,Auto Carrier
+BT,B-Train
+CI,Container Insulated
+CN,Conestoga
+CR,Container Refrigerated
+CV,Conveyor
+DD,Double Drop
+DT,Dump Trailer
+F,Flatbed
+F2,Flatbed Double
+FA,Flatbed Air-Ride
+FC,Flatbed w/Chains
+FD,Flatbed or Step Deck
+FH,Flatbed Hotshot
+FM,Flatbed w/Team
+FN,Flatbed Conestoga
+FO,Flatbed Overdimension
+FR,Flatbed/Van/Reefer
+FS,Flatbed w/Sides
+FT,Flatbed w/Tarps
+FZ,Flatbed HazMat
+HB,Hopper Bottom
+IR,Insulated Van or Reefer
+LA,Drop Deck Landoll
+LB,Lowboy
+LO,Lowboy Overdimension
+LR,Lowboy or Rem Gooseneck (RGN)
+LTL,Less Than Truckload
+MV,Moving Van
+MX,Flatbed Maxi
+NU,Pneumatic
+OT,Van Open-Top
+PO,Power Only
+R,Reefer
+R2,Reefer Double
+RA,Reefer Air-Ride
+RG,Removable Gooseneck
+RL,Reefer Logistics
+RLTL,Cold Chain
+RM,Reefer w/Team
+RN,Reefer Intermodal
+RP,Reefer Pallet Exchange
+RV,Reefer or Vented Van
+RZ,Reefer HazMat
+SB,Straight Box Truck
+SD,Step Deck
+SN,Stepdeck Conestoga
+SR,Step Deck or Rem Gooseneck (RGN)
+ST,Stretch Trailer
+TA,Tanker Aluminum
+TN,Tanker Intermodal
+TS,Tanker Steel
+TT,Truck and Trailer
+V,Van
+V2,Van Double
+V3,Van Triple
+VA,Van Air-Ride
+VB,Van Roller Bed
+VC,Van w/Curtains
+VF,Van or Flatbed
+VG,Van Lift-Gate
+VH,Van Hotshot
+VI,Van Insulated
+VL,Van Logistics
+VM,Van w/Team
+VN,Van Intermodal
+VP,Van Pallet Exchange
+VR,Van or Reefer
+VS,Van Conestoga
+VT,Van or Flatbed w/Tarps
+VV,Van Vented
+VW,Van Blanket Wrap
+VZ,Van HazMat

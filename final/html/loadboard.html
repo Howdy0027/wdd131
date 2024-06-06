@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ops Loadboard</title>
+    <link rel="icon" href="/final/images/soren_r.png" alt="Soren R Icon">
+    <link rel="stylesheet" href="/final/styles/loadboard.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <ul>
+                <img src="/final/images/soren_logo.png" alt="Soren Logo">
+                <li><a href="/final/html/homepage.html">Soren FleetForce</a></li>
+                <li><a href="/final/html/loadboard.html">Loadboard</a></li>
+                <li><a href="#">Pickup Today</a></li>
+                <li><a href="#">Deliver Today</a></li>
+                <li><a href="/final/html/cody.html">Cody</a></li>
+                <li><a href="#">Dave</a></li>
+                <li><a href="#">Dylan</a></li>
+                <li><a href="#">Gustavo</a></li>
+                <li><a href="#">Jay</a></li>
+                <li><a href="https://app.sorentransport.com/auth/login" target="_blank">WAGs</a></li>
+                <li><a href="https://login.dat.com/login?state=hKFo2SBMVHRRY3JycjctYUFXVnJFUDlxQ0RSQTlRMEp3TlZwc6FupWxvZ2luo3RpZNkgRVNwd3k1czRVVUlzLV81NHNMcGdkcVJhTms4ZmtJQjSjY2lk2SBuNHlDY1VmUHpTRkFJQWRON3M1STBQa0NmVlM5cmcwMQ&client=n4yCcUfPzSFAIAdN7s5I0PkCfVS9rg01&protocol=oauth2&prompt=login&response_type=token%20id_token&redirect_uri=https:%2F%2Frateview.dat.com%2Fapp%2F&scope=openid%20profile%20email&audience=https:%2F%2Fprod-api.dat.com&app_name=rateview&page_mode=legacy&init_username=&view=login&email_readonly=false&nonce=PLP_DyjtGfVOJpxP_hEvvBkDD3o-U0~s&auth0Client=eyJuYW1lIjoiYXV0aDAuanMiLCJ2ZXJzaW9uIjoiOS4xMS4zIn0%3D&capturedTime=1716562636643"
+                        target="_blank">DAT RateView</a></li>
+                <li><a href="https://login.dat.com/login?state=hKFo2SBsOU42YWlmQkJZMUNCM3g0Vllrb2NXY0lnNlVVMTJ2YqFupWxvZ2luo3RpZNkgcElnOENGQWxVb21CSkdMZUVSSEY4cm1pWHgzYzhqX3ijY2lk2SBlOWx6TVhibldOSjBENTBDMmhhYWRvN0RpVzFha3dhQw&client=e9lzMXbnWNJ0D50C2haado7DiW1akwaC&protocol=oauth2&prompt=login&response_type=token%20id_token&redirect_uri=https:%2F%2Fone.dat.com%2Fcallback&scope=openid%20profile%20email&audience=https:%2F%2Fprod-api.dat.com&app_name=DAT%20One%20Web&page_mode=legacy&init_username=&view=login&email_readonly=false&nonce=h0UVniXc6BE1Q1P55s4aaCN2x.qZhETn&auth0Client=eyJuYW1lIjoiYXV0aDAuanMiLCJ2ZXJzaW9uIjoiOS4yNC4xIn0%3D&capturedTime=1716562653564"
+                        target="_blank">DAT Loadboard</a></li>
+            </ul>
+            <button id="logoutButton">Logout</button>
+            <ul>
+                <li>
+                    <p>© 2024 SOREN | All Rights Reserved.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="search-container">
+            <select id="searchColumn">
+                <!-- Populate options with column names -->
+            </select>
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button id="searchButton"><img src="/final/images/search_icon.png" alt="Search Icon"></button>
+        </div>
+        <div class="main-content">
+            <div class="title_container"></div>
+            <h1 class="loadboard_box">Ops Loadboard</h1>
+            <h1 class="loadboard_title">Ops Loadboard</h1>
+            <button id="createLoadButton" class="newLoad-icon"><img src="/final/images/load_icon.png"
+                    alt="New Load Icon" class="newLoad-icon2"></button>
+            <button id="columnConfigButton" class="columnConfig-icon"><img src="/final/images/config_icon.png"
+                    alt="Column Configuration Icon" class="columnConfig-icon2"></button>
+            <button id="openSortButton" class="sort-icon"><img src="/final/images/sort_icon.png" alt="Sort Icon"
+                    class="sort-icon2"></button>
+            <button id="downloadButton" class="download-icon"><img src="/final/images/download_icon.png"
+                    alt="Download Icon" class="download-icon2"></button>
+            <table id="loadTable">
+                <thead>
+                    <tr>
+                        <th>Load Number</th>
+                        <th>Customer</th>
+                        <th>Equipment</th>
+                        <th>Origin City</th>
+                        <th>Origin State</th>
+                        <th>Origin Zip</th>
+                        <th>Destination City</th>
+                        <th>Destination State</th>
+                        <th>Destination Zip</th>
+                        <th>Weight</th>
+                        <th>Pallet(s)</th>
+                        <th>Temp.</th>
+                        <th>PO / Ref #</th>
+                        <th>PU Appt Date</th>
+                        <th>PU Appt Time</th>
+                        <th>PU Actual Date</th>
+                        <th>PU Actual Time</th>
+                        <th>PU Conf. #</th>
+                        <th>Del Appt Date</th>
+                        <th>Del Appt Time</th>
+                        <th>Del Actual Date</th>
+                        <th>Del Actual Time</th>
+                        <th>Del Conf. #</th>
+                        <th>Load Status</th>
+                        <th>Tracking Status</th>
+                        <th>Notes</th>
+                        <th>MCN</th>
+                        <th>DOT</th>
+                        <th>Carrier Name</th>
+                        <th>Dispatch Name</th>
+                        <th>Dispatch #</th>
+                        <th>Dispatch Email</th>
+                        <th>Driver Name</th>
+                        <th>Driver #</th>
+                        <th>Revenue</th>
+                        <th>Cost</th>
+                        <th>Accessorials</th>
+                        <th>Margin</th>
+                        <th>Ops ID</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <!-- Table body goes here -->
+                <tbody id="loadTableBody">
+                    <!-- Load data rows will be populated here by JS -->
+                </tbody>
+            </table>
+            <div id="loadModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <h2 id="modalTitle"></h2>
+                    <form id="loadForm">
+                        <div class="form-group">
+                            <label for="loadNumberInput">Load # <span class="required">*</span></label>
+                            <input type="number" id="loadNumberInput" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerInput">Customer <span class="required">*</span></label>
+                            <select id="customerInput" required>
+                                <!-- Options will be populated from CSV -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="equipmentInput">Equipment Type <span class="required">*</span></label>
+                            <select id="equipmentInput" required>
+                                <!-- Options will be populated from CSV -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="originCityInput">Origin City <span class="required">*</span></label>
+                            <input type="text" id="originCityInput" required
+                                placeholder="Spell City Correctly and No Abbreviations">
+                        </div>
+                        <div class="form-group">
+                            <label for="originStateInput">Origin State <span class="required">*</span></label>
+                            <select id="originStateInput" required>
+                                <optgroup label="USA">
+                                    <option value="AL">ALABAMA</option>
+                                    <option value="AK">ALASKA</option>
+                                    <option value="AR">ARKANSAS</option>
+                                    <option value="AZ">ARIZONA</option>
+                                    <option value="CA">CALIFORNIA</option>
+                                    <option value="CO">COLORADO</option>
+                                    <option value="CT">CONNECTICUT</option>
+                                    <option value="DC">DISTRICT OF COLUMBIA</option>
+                                    <option value="DE">DELAWARE</option>
+                                    <option value="FL">FLORIDA</option>
+                                    <option value="GA">GEORGIA</option>
+                                    <option value="HI">HAWAII</option>
+                                    <option value="IA">IOWA</option>
+                                    <option value="ID">IDAHO</option>
+                                    <option value="IL">ILLINOIS</option>
+                                    <option value="IN">INDIANA</option>
+                                    <option value="KS">KANSAS</option>
+                                    <option value="KY">KENTUCKY</option>
+                                    <option value="LA">LOUISIANA</option>
+                                    <option value="MA">MASSACHUSETTS</option>
+                                    <option value="MD">MARYLAND</option>
+                                    <option value="ME">MAINE</option>
+                                    <option value="MI">MICHIGAN</option>
+                                    <option value="MN">MINNESOTA</option>
+                                    <option value="MO">MISSOURI</option>
+                                    <option value="MS">MISSISSIPPI</option>
+                                    <option value="MT">MONTANA</option>
+                                    <option value="NC">NORTH CAROLINA</option>
+                                    <option value="ND">NORTH DAKOTA</option>
+                                    <option value="NE">NEBRASKA</option>
+                                    <option value="NH">NEW HAMPSHIRE</option>
+                                    <option value="NJ">NEW JERSEY</option>
+                                    <option value="NM">NEW MEXICO</option>
+                                    <option value="NV">NEVADA</option>
+                                    <option value="NY">NEW YORK</option>
+                                    <option value="OH">OHIO</option>
+                                    <option value="OK">OKLAHOMA</option>
+                                    <option value="OR">OREGON</option>
+                                    <option value="PA">PENNSYLVANIA</option>
+                                    <option value="RI">RHODE ISLAND</option>
+                                    <option value="SC">SOUTH CAROLINA</option>
+                                    <option value="SD">SOUTH DAKOTA</option>
+                                    <option value="TN">TENNESSEE</option>
+                                    <option value="TX">TEXAS</option>
+                                    <option value="UT">UTAH</option>
+                                    <option value="VA">VIRGINIA</option>
+                                    <option value="VT">VERMONT</option>
+                                    <option value="WA">WASHINGTON</option>
+                                    <option value="WI">WISCONSIN</option>
+                                    <option value="WV">WEST VIRGINIA</option>
+                                    <option value="WY">WYOMING</option>
+                                </optgroup>
+                                <optgroup label="Mexico">
+                                    <option value="AG">AGUASCALIENTES</option>
+                                    <option value="BJ">BAJA CALIFORNIA</option>
+                                    <option value="BS">BAJA CALIFORNIA SUR</option>
+                                    <option value="CP">CAMPECHE</option>
+                                    <option value="CH">CHIAPAS</option>
+                                    <option value="CI">CHIHUAHUA</option>
+                                    <option value="CU">COAHUILA DE ZARAGOZA</option>
+                                    <option value="CL">COLIMA</option>
+                                    <option value="DF">CIUDAD DE MEXICO (PREVIOUSLY "DISTRITO FEDERAL")</option>
+                                    <option value="DG">DURANGO</option>
+                                    <option value="GJ">GUANAJUATO</option>
+                                    <option value="GR">GUERRERO</option>
+                                    <option value="HG">HIDALGO</option>
+                                    <option value="JA">JALISCO</option>
+                                    <option value="EM">MEXICO (ESTADO)</option>
+                                    <option value="MH">MICHOACAN DE OCAMPO</option>
+                                    <option value="MR">MORELOS</option>
+                                    <option value="NA">NAYARIT</option>
+                                    <option value="NX">NUEVO LEON (PC*MILER)</option>
+                                    <option value="MX-NL">NUEVO LEON (PC*MILER|RAIL)</option>
+                                    <option value="OA">OAXACA</option>
+                                    <option value="PU">PUEBLA</option>
+                                    <option value="QA">QUERETARO ARTEAGA</option>
+                                    <option value="QR">QUINTANA ROO</option>
+                                    <option value="SL">SAN LUIS POTOSI</option>
+                                    <option value="SI">SINALOA</option>
+                                    <option value="SO">SONORA</option>
+                                    <option value="TA">TABASCO</option>
+                                    <option value="TM">TAMAULIPAS</option>
+                                    <option value="TL">TLAXCALA</option>
+                                    <option value="VZ">VERACRUZ (PC*MILER)</option>
+                                    <option value="VL">VERACRUZ (PC*MILER|RAIL)</option>
+                                    <option value="YC">YUCATAN</option>
+                                    <option value="ZT">ZACATECAS</option>
+                                </optgroup>
+                                <optgroup label="Canada">
+                                    <option value="AB">ALBERTA</option>
+                                    <option value="BC">BRITISH COLUMBIA</option>
+                                    <option value="MB">MANITOBA</option>
+                                    <option value="NB">NEW BRUNSWICK</option>
+                                    <option value="NL">NEWFOUNDLAND & LABRADOR (PC*MILER)</option>
+                                    <option value="NF">NEWFOUNDLAND & LABRADOR (PC*MILER|RAIL)</option>
+                                    <option value="NS">NOVA SCOTIA</option>
+                                    <option value="NT">NORTHWEST TERRITORIES</option>
+                                    <option value="NU">NUNAVUT</option>
+                                    <option value="ON">ONTARIO</option>
+                                    <option value="PE">PRINCE EDWARD ISLAND</option>
+                                    <option value="QC">QUEBEC (PC*MILER)</option>
+                                    <option value="PQ">QUEBEC (PC*MILER|RAIL)</option>
+                                    <option value="SK">SASKATCHEWAN</option>
+                                    <option value="YT">YUKON TERRITORY</option>
+                                </optgroup>
+                                <optgroup label="Central American Countries">
+                                    <option value="BZ">BELIZE</option>
+                                    <option value="CR">COSTA RICA</option>
+                                    <option value="CZ">CANAL ZONE</option>
+                                    <option value="SV">EL SALVADOR</option>
+                                    <option value="GT">GUATEMALA</option>
+                                    <option value="HN">HONDURAS</option>
+                                    <option value="NI">NICARAGUA</option>
+                                    <option value="PA">PANAMA</option>
+                                </optgroup>
+                                <optgroup label="American Possessions Or Protectorates">
+                                    <option value="AS">AMERICAN SAMOA</option>
+                                    <option value="GU">GUAM</option>
+                                    <option value="MP">NORTHERN MARIANAS</option>
+                                    <option value="PR">PUERTO RICO</option>
+                                    <option value="VI">VIRGIN ISLANDS</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="originZipInput">Origin Zip <span class="required">*</span></label>
+                            <input type="text" id="originZipInput" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="destinationCityInput">Destination City <span class="required">*</span></label>
+                            <input type="text" id="destinationCityInput" required
+                                placeholder="Spell City Correctly and No Abbreviations">
+                        </div>
+                        <div class="form-group">
+                            <label for="destinationStateInput">Destination State <span class="required">*</span></label>
+                            <select id="destinationStateInput" required>
+                                <optgroup label="USA">
+                                    <option value="AL">ALABAMA</option>
+                                    <option value="AK">ALASKA</option>
+                                    <option value="AR">ARKANSAS</option>
+                                    <option value="AZ">ARIZONA</option>
+                                    <option value="CA">CALIFORNIA</option>
+                                    <option value="CO">COLORADO</option>
+                                    <option value="CT">CONNECTICUT</option>
+                                    <option value="DC">DISTRICT OF COLUMBIA</option>
+                                    <option value="DE">DELAWARE</option>
+                                    <option value="FL">FLORIDA</option>
+                                    <option value="GA">GEORGIA</option>
+                                    <option value="HI">HAWAII</option>
+                                    <option value="IA">IOWA</option>
+                                    <option value="ID">IDAHO</option>
+                                    <option value="IL">ILLINOIS</option>
+                                    <option value="IN">INDIANA</option>
+                                    <option value="KS">KANSAS</option>
+                                    <option value="KY">KENTUCKY</option>
+                                    <option value="LA">LOUISIANA</option>
+                                    <option value="MA">MASSACHUSETTS</option>
+                                    <option value="MD">MARYLAND</option>
+                                    <option value="ME">MAINE</option>
+                                    <option value="MI">MICHIGAN</option>
+                                    <option value="MN">MINNESOTA</option>
+                                    <option value="MO">MISSOURI</option>
+                                    <option value="MS">MISSISSIPPI</option>
+                                    <option value="MT">MONTANA</option>
+                                    <option value="NC">NORTH CAROLINA</option>
+                                    <option value="ND">NORTH DAKOTA</option>
+                                    <option value="NE">NEBRASKA</option>
+                                    <option value="NH">NEW HAMPSHIRE</option>
+                                    <option value="NJ">NEW JERSEY</option>
+                                    <option value="NM">NEW MEXICO</option>
+                                    <option value="NV">NEVADA</option>
+                                    <option value="NY">NEW YORK</option>
+                                    <option value="OH">OHIO</option>
+                                    <option value="OK">OKLAHOMA</option>
+                                    <option value="OR">OREGON</option>
+                                    <option value="PA">PENNSYLVANIA</option>
+                                    <option value="RI">RHODE ISLAND</option>
+                                    <option value="SC">SOUTH CAROLINA</option>
+                                    <option value="SD">SOUTH DAKOTA</option>
+                                    <option value="TN">TENNESSEE</option>
+                                    <option value="TX">TEXAS</option>
+                                    <option value="UT">UTAH</option>
+                                    <option value="VA">VIRGINIA</option>
+                                    <option value="VT">VERMONT</option>
+                                    <option value="WA">WASHINGTON</option>
+                                    <option value="WI">WISCONSIN</option>
+                                    <option value="WV">WEST VIRGINIA</option>
+                                    <option value="WY">WYOMING</option>
+                                </optgroup>
+                                <optgroup label="Mexico">
+                                    <option value="AG">AGUASCALIENTES</option>
+                                    <option value="BJ">BAJA CALIFORNIA</option>
+                                    <option value="BS">BAJA CALIFORNIA SUR</option>
+                                    <option value="CP">CAMPECHE</option>
+                                    <option value="CH">CHIAPAS</option>
+                                    <option value="CI">CHIHUAHUA</option>
+                                    <option value="CU">COAHUILA DE ZARAGOZA</option>
+                                    <option value="CL">COLIMA</option>
+                                    <option value="DF">CIUDAD DE MEXICO</option>
+                                    <option value="DG">DURANGO</option>
+                                    <option value="GJ">GUANAJUATO</option>
+                                    <option value="GR">GUERRERO</option>
+                                    <option value="HG">HIDALGO</option>
+                                    <option value="JA">JALISCO</option>
+                                    <option value="EM">MEXICO (ESTADO)</option>
+                                    <option value="MH">MICHOACAN DE OCAMPO</option>
+                                    <option value="MR">MORELOS</option>
+                                    <option value="NA">NAYARIT</option>
+                                    <option value="NX">NUEVO LEON (PC*MILER)</option>
+                                    <option value="NL">NUEVO LEON (PC*MILER|Rail)</option>
+                                    <option value="OA">OAXACA</option>
+                                    <option value="PU">PUEBLA</option>
+                                    <option value="QA">QUERETARO ARTEAGA</option>
+                                    <option value="QR">QUINTANA ROO</option>
+                                    <option value="SL">SAN LUIS POTOSI</option>
+                                    <option value="SI">SINALOA</option>
+                                    <option value="SO">SONORA</option>
+                                    <option value="TA">TABASCO</option>
+                                    <option value="TM">TAMAULIPAS</option>
+                                    <option value="TL">TLAXCALA</option>
+                                    <option value="VZ">VERACRUZ (PC*MILER)</option>
+                                    <option value="VL">VERACRUZ (PC*MILER|Rail)</option>
+                                    <option value="YC">YUCATAN</option>
+                                    <option value="ZT">ZACATECAS</option>
+                                </optgroup>
+                                <optgroup label="Canada">
+                                    <option value="AB">ALBERTA</option>
+                                    <option value="BC">BRITISH COLUMBIA</option>
+                                    <option value="MB">MANITOBA</option>
+                                    <option value="NB">NEW BRUNSWICK</option>
+                                    <option value="NF">NEWFOUNDLAND</option>
+                                    <option value="NS">NOVA SCOTIA</option>
+                                    <option value="NT">NORTHWEST TERRITORIES</option>
+                                    <option value="ON">ONTARIO</option>
+                                    <option value="PE">PRINCE EDWARD ISLAND</option>
+                                    <option value="QC">QUEBEC</option>
+                                    <option value="SK">SASKATCHEWAN</option>
+                                    <option value="YT">YUKON TERRITORY</option>
+                                </optgroup>
+                                <optgroup label="Central American Countries">
+                                    <option value="BZ">BELIZE</option>
+                                    <option value="CR">COSTA RICA</option>
+                                    <option value="CZ">CANAL ZONE</option>
+                                    <option value="SV">EL SALVADOR</option>
+                                    <option value="GT">GUATEMALA</option>
+                                    <option value="HN">HONDURAS</option>
+                                    <option value="NI">NICARAGUA</option>
+                                    <option value="PA">PANAMA</option>
+                                </optgroup>
+                                <optgroup label="American Possessions Or Protectorates">
+                                    <option value="AS">AMERICAN SAMOA</option>
+                                    <option value="GU">GUAM</option>
+                                    <option value="MP">NORTHERN MARIANAS</option>
+                                    <option value="PR">PUERTO RICO</option>
+                                    <option value="VI">VIRGIN ISLANDS</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="destinationZipInput">Destination Zip <span class="required">*</span></label>
+                            <input type="text" id="destinationZipInput" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="weightInput">Weight <span class="required">*</span></label>
+                            <input type="number" id="weightInput" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="palletInput">Pallet(s)</label>
+                            <input type="number" id="palletInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="tempInput">Temp.</label>
+                            <input type="number" id="tempInput" step="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="poRefInput">PO / Ref #</label>
+                            <input type="text" id="poRefInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="puApptDateInput">PU Appt Date <span class="required">*</span></label>
+                            <input type="date" id="puApptDateInput" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="puApptTimeInput">PU Appt Time <span class="required">*</span></label>
+                            <input type="time" id="puApptTimeInput" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="puActualDateInput">PU Actual Date</label>
+                            <input type="date" id="puActualDateInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="puActualTimeInput">PU Actual Time</label>
+                            <input type="time" id="puActualTimeInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="puConfInput">PU Conf. #</label>
+                            <input type="text" id="puConfInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="delApptDateInput">Del Appt Date <span class="required">*</span></label>
+                            <input type="date" id="delApptDateInput" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="delApptTimeInput">Del Appt Time <span class="required">*</span></label>
+                            <input type="time" id="delApptTimeInput" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="delActualDateInput">Del Actual Date</label>
+                            <input type="date" id="delActualDateInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="delActualTimeInput">Del Actual Time</label>
+                            <input type="time" id="delActualTimeInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="delConfInput">Del Conf. #</label>
+                            <input type="text" id="delConfInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="statusInput">Load Status <span class="required">*</span></label>
+                            <select id="statusInput" required>
+                                <option value="Available">Available</option>
+                                <option value="Packet">Packet</option>
+                                <option value="Booked">Booked</option>
+                                <option value="Quote">Quote</option>
+                                <option value="Cancelled">Cancelled</option>
+                                <option value="At Origin">At Origin</option>
+                                <option value="In Transit">In Transit</option>
+                                <option value="Delayed">Delayed</option>
+                                <option value="At Destination">At Destination</option>
+                                <option value="Delivered">Delivered</option>
+                                <option value="On Hold">On Hold</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="trackingInput">Tracking Status</label>
+                            <select id="trackingInput">
+                                <option value="NLY">NLY</option>
+                                <option value="T">T</option>
+                                <option value="I">I</option>
+                                <option value="NT">NT</option>
+                                <option value="NTN">NTN</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mcnInput">MCN</label>
+                            <input type="number" id="mcnInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="dotInput">DOT</label>
+                            <input type="number" id="dotInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="carrierNameInput">Carrier Name</label>
+                            <input type="text" id="carrierNameInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="dispatchNameInput">Dispatch Name</label>
+                            <input type="text" id="dispatchNameInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="dispatchNumberInput">Dispatch #</label>
+                            <input type="tel" id="dispatchNumberInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="dispatchEmailInput">Dispatch Email</label>
+                            <input type="email" id="dispatchEmailInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="driverNameInput">Driver Name</label>
+                            <input type="text" id="driverNameInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="driverNumberInput">Driver #</label>
+                            <input type="tel" id="driverNumberInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="revenueInput">Revenue</label>
+                            <input type="number" step="0.01" id="revenueInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="costInput">Cost</label>
+                            <input type="number" step="0.01" id="costInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="accessorialTotalInput">Accessorial Total</label>
+                            <input type="number" step="0.01" id="accessorialTotalInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="opsIDInput">Ops ID</label>
+                            <input type="text" id="opsIDInput">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit">Save</button>
+                            <button type="button" onclick="closeModal()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="columnConfigModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button" onclick="closeColumnConfigModal()">&times;</span>
+                    <h2>Column Configuration</h2>
+                    <form id="columnConfigForm">
+                        <div class="form-group">
+                            <input type="checkbox" id="loadNumberColumn" checked>
+                            <label for="loadNumberColumn">Load Number</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="customerColumn" checked>
+                            <label for="customerColumn">Customer</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="equipmentColumn" checked>
+                            <label for="equipmentColumn">Equipment</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="originCityColumn" checked>
+                            <label for="originCityColumn">Origin City</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="originStateColumn" checked>
+                            <label for="originStateColumn">Origin State</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="originZipColumn" checked>
+                            <label for="originZipColumn">Origin Zip</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="destinationCityColumn" checked>
+                            <label for="destinationCityColumn">Destination City</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="destinationStateColumn" checked>
+                            <label for="destinationStateColumn">Destination State</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="destinationZipColumn" checked>
+                            <label for="destinationZipColumn">Destination Zip</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="weightColumn" checked>
+                            <label for="weightColumn">Weight</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="palletColumn">
+                            <label for="palletColumn">Pallet(s)</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="tempColumn">
+                            <label for="tempColumn">Temp.</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="poRefColumn">
+                            <label for="poRefColumn">PO / Ref #</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="puApptDateColumn" checked>
+                            <label for="puApptDateColumn">PU Appt Date</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="puApptTimeColumn" checked>
+                            <label for="puApptTimeColumn">PU Appt Time</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="puActualDateColumn">
+                            <label for="puActualDateColumn">PU Actual Date</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="puActualTimeColumn">
+                            <label for="puActualTimeColumn">PU Actual Time</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="puConfColumn">
+                            <label for="puConfColumn">PU Conf. #</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="delApptDateColumn" checked>
+                            <label for="delApptDateColumn">Del Appt Date</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="delApptTimeColumn" checked>
+                            <label for="delApptTimeColumn">Del Appt Time</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="delActualDateColumn">
+                            <label for="delActualDateColumn">Del Actual Date</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="delActualTimeColumn">
+                            <label for="delActualTimeColumn">Del Actual Time</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="delConfColumn">
+                            <label for="delConfColumn">Del Conf. #</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="statusColumn" checked>
+                            <label for="statusColumn">Load Status</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="trackingColumn">
+                            <label for="trackingColumn">Tracking Status</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="notesColumn">
+                            <label for="notesColumn">Notes</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="mcnColumn">
+                            <label for="mcnColumn">MCN</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="dotColumn">
+                            <label for="dotColumn">DOT</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="carrierNameColumn">
+                            <label for="carrierNameColumn">Carrier Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="dispatchNameColumn">
+                            <label for="dispatchNameColumn">Dispatch Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="dispatchNumberColumn">
+                            <label for="dispatchNumberColumn">Dispatch #</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="dispatchEmailColumn">
+                            <label for="dispatchEmailColumn">Dispatch Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="driverNameColumn">
+                            <label for="driverNameColumn">Driver Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="driverNumberColumn">
+                            <label for="driverNumberColumn">Driver #</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="revenueColumn" checked>
+                            <label for="revenueColumn">Revenue</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="costColumn" checked>
+                            <label for="costColumn">Cost</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="accessorialColumn">
+                            <label for="accessorialColumn">Accessorials</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="marginColumn">
+                            <label for="marginColumn">Margin</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="opsIDColumn">
+                            <label for="opsIDColumn">Ops ID</label>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit">Save</button>
+                            <button type="button" id="cancelColumnConfigButton">Cancel</button>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" id="selectAllButton">Select All</button>
+                            <button type="button" id="deselectAllButton">Deselect All</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="notesPopup" class="modal">
+                <div class="modal-content">
+                    <span class="close-button" onclick="closeNotesPopup()">&times;</span>
+                    <h2>Notes for Load <span id="currentLoadNumber"></span></h2>
+                    <div id="notesList"></div>
+                    <textarea id="noteInput" placeholder="Enter note here..."></textarea>
+                    <input type="text" id="userIdInput" placeholder="Enter User ID here...">
+                    <button id="addNoteButton">Add Note</button>
+                    <button id="editNoteButton" onclick="editNoteForLoad(getCurrentLoadNumber())">Edit Note</button>
+                    <button id="deleteNoteButton" onclick="deleteNoteForLoad(getCurrentLoadNumber())">Delete
+                        Note</button>
+                    <button id="closeNotesButton" onclick="closeNotesPopup()">Close</button>
+                </div>
+            </div>
+            <div id="sortModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button" onclick="closeSortModal()">&times;</span>
+                    <h2>Sort Loads</h2>
+                    <form id="sortForm">
+                        <div class="form-group">
+                            <label for="sortColumn">Sort By</label>
+                            <select id="sortColumn">
+                                <!-- Populate options with column names -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sortOrder">Order</label>
+                            <select id="sortOrder">
+                                <option value="asc">Ascending</option>
+                                <option value="desc">Descending</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit">Sort</button>
+                            <button type="button" onclick="closeSortModal()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/final/scripts/loadboard.js"></script>
+</body>
+
+</html>

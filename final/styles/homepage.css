@@ -1,0 +1,367 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Navbar styling */
+.navbar {
+    width: 12.5%;
+    /* Default width of the navbar */
+    background-color: #333;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    transition: width 0.3s;
+    /* Smooth transition for collapsing */
+}
+
+.navbar.collapsed {
+    width: 80px;
+    /* Collapsed width of the navbar */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar img.logo {
+    width: 80%;
+    /* Logo size */
+}
+
+.navbar.collapsed img.logo {
+    display: none;
+    /* Hide logo when collapsed */
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar li {
+    margin-bottom: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar a img.nav-icon {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.navbar.collapsed a img.nav-icon {
+    margin: 0;
+    /* Remove margin when collapsed */
+}
+
+.navbar.collapsed a .nav-text {
+    display: none;
+    /* Hide text when collapsed */
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+#logoutButton {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logoutButton img.logout-icon {
+    margin-right: 10px;
+    width: 20px;
+}
+
+#logoutButton:hover {
+    background-color: #ff5252;
+}
+
+.navbar.collapsed #logoutButton img.logout-icon {
+    margin-right: 0;
+}
+
+.navbar.collapsed #logoutButton .nav-text {
+    display: none;
+    /* Hide text when collapsed */
+}
+
+.navbar ul:last-child {
+    margin-top: 5%;
+}
+
+.navbar.collapsed .copyright {
+    display: none;
+    /* Hide copyright when collapsed */
+}
+
+.navbar ul:last-child li {
+    text-align: center;
+}
+
+.navbar ul:last-child li p {
+    font-size: 8.9px;
+    color: #f0f0f0;
+}
+
+/* General button styling */
+button {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ff5252;
+}
+
+#selectAllButton,
+#deselectAllButton {
+    margin-right: 5px;
+    margin-bottom: 15px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: none;
+}
+
+form-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Background image styling */
+.background-image {
+    flex-grow: 1;
+    background-image: url('/final/images/home_image.webp');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Hamburger button styling */
+.hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px 10px 10px 5px;
+}
+
+.hamburger:hover {
+    color: white;
+    background-color: #555;
+}
+
+/* Grid Container for quick links */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 12.5%;
+    /* Adjust according to the width of the navbar */
+    width: 87.5%;
+    height: 100%;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    /* Slightly transparent background */
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.grid-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.grid-item img {
+    width: 50px;
+    /* Icon size */
+    height: 50px;
+    margin-bottom: 10px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10%;
+}
+
+.grid-item span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.grid-item:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Change background on hover */
+}
+
+/* Responsive Design for tablets */
+@media (max-width: 768px) {
+
+    /* Navbar styling */
+    .navbar {
+        width: 80px;
+        /* Collapsed width */
+    }
+
+    .navbar.collapsed {
+        width: 80px;
+        /* Collapsed width */
+    }
+
+    .navbar img.logo {
+        display: none;
+        /* Hide logo */
+    }
+
+    .navbar a img.nav-icon {
+        margin: 0;
+        /* Remove margin */
+    }
+
+    .navbar a .nav-text {
+        display: none;
+        /* Hide text */
+    }
+
+    .navbar #logoutButton {
+        padding: 10px;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .grid-container {
+        top: 10px;
+        /* Adjust top position for grid */
+        right: 0;
+        width: 85%;
+        margin-left: 15px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+
+    .grid-item img {
+        width: 40px;
+        /* Adjust icon size for mobile */
+        height: 40px;
+    }
+
+    .grid-item span {
+        font-size: 14px;
+    }
+}
+
+/* Responsive Design for mobile devices */
+@media (max-width: 480px) {
+
+    /* Navbar styling */
+    .navbar {
+        width: 80px;
+        /* Collapsed width */
+    }
+
+    .navbar.collapsed {
+        width: 80px;
+        /* Collapsed width */
+    }
+
+    .navbar img.logo {
+        display: none;
+        /* Hide logo */
+    }
+
+    .navbar a img.nav-icon {
+        margin: 0;
+        /* Remove margin */
+    }
+
+    .navbar a .nav-text {
+        display: none;
+        /* Hide text */
+    }
+
+    .navbar #logoutButton {
+        padding: 10px;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    /* Grid Container */
+    .grid-container {
+        top: 10px;
+        /* Adjust top position for grid */
+        right: 0;
+        width: 85%;
+        margin-left: 15px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+    }
+
+    .grid-item img {
+        width: 40px;
+        /* Adjust icon size for mobile */
+        height: 40px;
+    }
+
+    .grid-item span {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,364 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #333;
+    /* Dark background color */
+}
+
+/* Container for the login and background image */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Login container styles */
+.login-container {
+    width: 15%;
+    /* Container width */
+    padding: 20px 40px 40px 40px;
+    /* Padding around the container */
+    background-color: white;
+    /* Background color */
+    display: flex;
+    flex-direction: column;
+    /* Column layout */
+    justify-content: center;
+    /* Center the content vertically */
+    margin: auto 2.5%;
+    /* Center the container horizontally */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Shadow effect */
+}
+
+.login-container h1 {
+    display: flex;
+    align-items: center;
+    /* Center align the logo and text vertically */
+    color: red;
+    /* Title color */
+    font-size: x-large;
+    /* Title font size */
+    margin-bottom: 10px;
+    /* Space below the title */
+}
+
+.title-logo {
+    margin-right: 10px;
+    /* Space to the right of the logo */
+    width: 110px;
+    /* Logo width */
+}
+
+.login-container p {
+    color: #666;
+    /* Text color */
+    margin-bottom: 20px;
+    /* Space below the paragraph */
+    text-align: left;
+    /* Align text to the left */
+    font-size: small;
+    /* Small font size */
+}
+
+/* Form group styles */
+.form-group {
+    margin-bottom: 15px;
+    /* Space below each form group */
+    width: 100%;
+    /* Full width */
+}
+
+/* Label styles */
+label {
+    display: block;
+    /* Block display for labels */
+    margin-bottom: 5px;
+    /* Space below the label */
+    font-weight: bold;
+    /* Bold text */
+    color: #333;
+    /* Label color */
+}
+
+/* Input container styles */
+.input-container {
+    display: flex;
+    align-items: center;
+    /* Center align the icon and input */
+    border: 1px solid #ccc;
+    /* Border color */
+    border-radius: 4px;
+    /* Rounded corners */
+    padding: 8px;
+    /* Padding inside the container */
+}
+
+.input-container .icon {
+    margin-right: 8px;
+    /* Space to the right of the icon */
+    color: red;
+    /* Icon color */
+    width: 15px;
+    /* Icon width */
+}
+
+.toggle-password img {
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    width: 20px;
+    /* Icon width */
+}
+
+/* Input styles */
+input {
+    width: 100%;
+    /* Full width */
+    border: none;
+    /* No border */
+    outline: none;
+    /* No outline */
+}
+
+/* Remember me container styles */
+.remember-me-container {
+    display: flex;
+    justify-content: space-between;
+    /* Space between elements */
+    align-items: center;
+    /* Center align items vertically */
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    /* Center align the checkbox and label */
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 8px;
+    /* Space to the right of the checkbox */
+    color: black;
+    /* Checkbox color */
+    accent-color: red;
+    /* Accent color for the checkbox */
+}
+
+.remember-me label {
+    margin: 0;
+    /* No margin */
+    white-space: nowrap;
+    /* Ensure the label stays on one line */
+    color: #666;
+    /* Label color */
+    font-size: small;
+    /* Small font size */
+}
+
+/* Forgot password styles */
+.forgot-password {
+    color: #666;
+    /* Link color */
+    text-decoration: none;
+    /* No underline */
+    white-space: nowrap;
+    /* Ensure the link stays on one line */
+    font-size: small;
+    /* Small font size */
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+    /* Underline on hover */
+}
+
+/* Button styles */
+button {
+    width: 100%;
+    /* Full width */
+    padding: 10px;
+    /* Padding inside the button */
+    background-color: red;
+    /* Background color */
+    border: none;
+    /* No border */
+    border-radius: 4px;
+    /* Rounded corners */
+    color: white;
+    /* Text color */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    font-size: 16px;
+    /* Font size */
+}
+
+button:hover {
+    background-color: #ff5252;
+    /* Background color on hover */
+}
+
+.login-container p a {
+    color: #666;
+    /* Link color */
+    text-decoration: none;
+    /* No underline */
+    font-size: small;
+    /* Small font size */
+}
+
+.login-container p a:hover {
+    text-decoration: underline;
+    /* Underline on hover */
+}
+
+/* Background image styles */
+.background-image {
+    flex-grow: 1;
+    /* Grow to fill the available space */
+    background-image: url('/final/images/login_image.png');
+    /* Background image */
+    background-size: cover;
+    /* Cover the entire container */
+    background-position: center;
+    /* Center the image */
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    /* Above other content */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Dark background with opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal content styles */
+.modal-content {
+    background-color: white;
+    /* Background color */
+    padding: 40px;
+    /* Padding inside the modal */
+    border-radius: 10px;
+    /* Rounded corners */
+    max-width: 400px;
+    /* Maximum width */
+    margin: auto;
+    /* Center the modal */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Shadow effect */
+}
+
+/* Close button styles */
+.modal .close {
+    float: right;
+    /* Align to the right */
+    font-size: 1.5em;
+    /* Font size */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+/* Form group styles in modal */
+.modal .form-group {
+    margin-bottom: 15px;
+    /* Space below each form group */
+}
+
+/* Input field styles in modal */
+.modal input {
+    width: 100%;
+    /* Full width */
+    padding: 10px;
+    /* Padding inside the input */
+    border: 1px solid #ccc;
+    /* Border color */
+    border-radius: 4px;
+    /* Rounded corners */
+    margin-top: 5px;
+    /* Space above the input */
+}
+
+/* Button styles in modal */
+.modal button {
+    width: 100%;
+    /* Full width */
+    padding: 10px;
+    /* Padding inside the button */
+    background-color: red;
+    /* Background color */
+    border: none;
+    /* No border */
+    border-radius: 4px;
+    /* Rounded corners */
+    color: white;
+    /* Text color */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    font-size: 16px;
+    /* Font size */
+    margin-top: 10px;
+    /* Space above the button */
+}
+
+.modal button:hover {
+    background-color: #ff5252;
+    /* Background color on hover */
+}
+
+/* Responsive Design */
+
+/* For tablet devices */
+@media (max-width: 768px) {
+    .login-container {
+        width: 80%;
+    }
+
+    .login-container h1 {
+        font-size: 20px;
+    }
+
+    .login-container p,
+    .remember-me label,
+    .forgot-password {
+        font-size: 12px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .login-container {
+        width: 90%;
+    }
+
+    .login-container h1 {
+        font-size: 18px;
+    }
+
+    .login-container p,
+    .remember-me label,
+    .forgot-password {
+        font-size: 12px;
+    }
+
+    button {
+        font-size: 12px;
+    }
+}

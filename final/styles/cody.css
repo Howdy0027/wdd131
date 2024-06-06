@@ -1,0 +1,510 @@
+/* General styling */
+/* This section defines the general styling for the application */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Navbar styling */
+/* This section defines the styling for the navigation bar */
+.navbar {
+    width: 10%;
+    background-color: #333;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+}
+
+.navbar img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar li {
+    margin-bottom: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+#logoutButton {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 100%;
+}
+
+#logoutButton:hover {
+    background-color: #ff5252;
+}
+
+.navbar ul:last-child {
+    margin-top: 5%;
+}
+
+.navbar ul:last-child li {
+    text-align: center;
+}
+
+.navbar ul:last-child li p {
+    font-size: 8.9px;
+    color: #f0f0f0;
+}
+
+/* Main content styling */
+/* This section defines the styling for the main content area */
+.main-content {
+    width: 90%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 10%;
+}
+
+.loadboard_box {
+    position: fixed;
+    top: 0%;
+    left: 9.99%;
+    width: 100.01%;
+    padding: 1.5%;
+    margin: 0;
+    color: transparent;
+    background: #f0f0f0;
+    z-index: 1;
+}
+
+.loadboard_title {
+    position: fixed;
+    left: 47.25%;
+    top: 4.25%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: #f0f0f0;
+    color: red;
+    z-index: 1;
+}
+
+/* Button styling */
+/* This section defines the styling for buttons throughout the application */
+button {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ff5252;
+}
+
+#selectAllButton,
+#deselectAllButton {
+    margin-right: 5px;
+    margin-bottom: 15px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: none;
+}
+
+form-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Icon styling */
+/* This section defines the styling for various icons in the application */
+.sort-icon,
+.columnConfig-icon,
+.newLoad-icon,
+.download-icon {
+    width: 4.5%;
+    position: fixed;
+    cursor: pointer;
+    background-color: transparent;
+    z-index: 2;
+}
+
+.download-icon {
+    top: 3.5%;
+    right: 0;
+}
+
+.sort-icon {
+    top: 3.5%;
+    right: 2.5%;
+}
+
+.columnConfig-icon {
+    top: 3%;
+    right: 5.25%;
+}
+
+.newLoad-icon {
+    top: 3.5%;
+    right: 8.25%;
+}
+
+.sort-icon:hover,
+.columnConfig-icon:hover,
+.newLoad-icon:hover,
+.download-icon:hover {
+    background-color: transparent;
+}
+
+.sort-icon2,
+.columnConfig-icon2,
+.newLoad-icon2,
+.download-icon2 {
+    width: 100%;
+}
+
+/* Table styling */
+/* This section defines the styling for tables throughout the application */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4.25%;
+    table-layout: auto;
+}
+
+table th,
+table td {
+    padding: 5px;
+    border: 1px solid #eee;
+    text-align: left;
+    white-space: nowrap;
+}
+
+table td a {
+    color: red;
+    text-decoration: none;
+}
+
+table th {
+    position: sticky;
+    background-color: red;
+    color: white;
+    z-index: 0;
+    top: 95px;
+}
+
+table tr:nth-child(odd) {
+    background-color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+#loadTable {
+    overflow-x: auto;
+    /* Allows for horizontal scrolling */
+}
+
+/* Modal styling */
+/* This section defines the styling for modal popups */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    height: 75%;
+    overflow-y: auto;
+    /* Allows for vertical scrolling */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.close-button {
+    font-size: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: red;
+}
+
+/* Notes Popup styling */
+/* This section defines the styling for the notes popup */
+#notesPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: white;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#popupOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#notesList div {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#notesPopup textarea {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#notesPopup input {
+    width: 25%;
+    margin-bottom: 5px;
+}
+
+#notesPopup button {
+    margin-bottom: 10px;
+}
+
+/* Form styling */
+/* This section defines the styling for forms and form elements */
+.form-group {
+    margin-bottom: 10px;
+    width: 75%;
+}
+
+label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+input,
+select {
+    padding: 5px;
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    accent-color: red;
+    width: auto;
+    height: auto;
+    margin-right: 10px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group input[type="checkbox"] {
+    background-color: red;
+    border: 2px solid red;
+    border-radius: 4px;
+}
+
+.form-group label {
+    color: black;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.required {
+    color: red;
+    font-size: large;
+}
+
+/* Status styling */
+/* This section defines the styling for different status classes */
+.status-packet,
+.status-booked {
+    background-color: lightblue;
+}
+
+.status-quote {
+    background-color: lightsalmon;
+}
+
+.status-available {
+    background-color: transparent;
+}
+
+.status-in-transit,
+.status-at-origin,
+.status-at-destination {
+    background-color: rgb(250, 250, 138);
+}
+
+.status-delivered {
+    background-color: lightgreen;
+}
+
+.status-cancelled,
+.status-delayed,
+.status-on-hold {
+    background-color: lightcoral;
+}
+
+/* Date styling */
+/* This section defines the styling for different date ranges */
+.date-past {
+    background-color: #ffcccc;
+    /* Light red background for past dates */
+}
+
+.date-today {
+    background-color: #ffcccc;
+    /* Light red background for today */
+}
+
+.date-very-close {
+    background-color: #ffe5cc;
+    /* Light orange background for the next 7 days */
+}
+
+.date-close {
+    background-color: #fffccc;
+    /* Light yellow background for the next 14 days */
+}
+
+/* Tracking styling */
+/* This section defines the styling for different tracking statuses */
+.tracking-nly {
+    background-color: darkgoldenrod;
+    color: white;
+}
+
+.tracking-t {
+    background-color: darkgreen;
+    color: white;
+}
+
+.tracking-i {
+    background-color: darkorange;
+    color: white;
+}
+
+.tracking-nt {
+    background-color: darkred;
+    color: white;
+}
+
+.tracking-ntn {
+    background-color: transparent;
+}
+
+/* Search container styling */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: absolute;
+    z-index: 2;
+    left: 11%;
+    top: 5%;
+}
+
+.search-container select,
+.search-container input,
+.search-container button {
+    display: fixed;
+    margin-right: 10px;
+    padding: 7.5px;
+    font-size: 16px;
+}
+
+.search-container select,
+.search-container input {
+    flex: 1;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-container button {
+    background-color: transparent;
+    color: transparent;
+    cursor: pointer;
+    padding: 0%;
+    margin-right: 0%;
+    width: 7.5%;
+}
+
+.search-container button:hover {
+    background-color: transparent;
+}
+
+.search-container img {
+    width: 100%;
+}
